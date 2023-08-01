@@ -13,3 +13,5 @@ app.use(bp.json());
 app.get("/", (request, response)=>{
     response.status(200).json("howdy yall")
 })
+
+app.listen(PORT, ()=> console.log(`App is listening on port ${PORT}`))
