@@ -10,14 +10,14 @@ const app = express();
 app.use(cors());
 app.use(bp.json());
 
-const Book = require("./models/book")
+const Book = require("./models/books")
 mongoose.connect(process.env.DATABASE_URL)
 
 app.get("/", (request, response)=>{
     response.status(200).json("howdy yall")
 })
 
-app.get("/book", async (request, response)=>{
+app.get("/books", async (request, response)=>{
 
     const allBooks = await Book.find(request.query);
     response.status(200).json(allBooks);
