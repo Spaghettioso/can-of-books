@@ -14,4 +14,12 @@ app.get("/", (request, response)=>{
     response.status(200).json("howdy yall")
 })
 
+app.get("/book", async (request, response)=>{
+
+    const allBooks = await Book.find(request.query);
+    response.status(200).json(allBooks);
+
+})
+
+
 app.listen(PORT, ()=> console.log(`App is listening on port ${PORT}`))
