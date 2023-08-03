@@ -28,7 +28,7 @@ export default function Main() {
   //DELETE
 
   const handleDelete = async (id) => {
-    const res = await axios.delete(`https://localhost:8090/books/${id}`)
+    const res = await axios.delete(`http://localhost:8090/books/${id}`)
     console.log(res)
     getBooks()
   }
@@ -36,7 +36,7 @@ export default function Main() {
   //UPDATE
 
   const handleUpdateBook = async (book) => {
-    await axios.put(`https://localhost:8090/books/${book._id}`, book)
+    await axios.put(`http://localhost:8090/books/${book._id}`, book)
     getBooks();
   } 
 

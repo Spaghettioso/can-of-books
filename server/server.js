@@ -21,12 +21,12 @@ app.get("/", (request, response)=>{
 // CRUD: READ
 
 app.get("/books", async (request, response) => {
-    console.log(request)
+    // console.log(request)
     try {
         const allBooks = await Book.find();
         response.status(200).json(allBooks);
     } catch (err) {
-        console.log(err)
+        // console.log(err)
         response.status(404).json(err)
     }
 })
@@ -38,7 +38,7 @@ app.post("/books", async(request, response) => {
         const newBook = await Book.create(request.body)
         response.status(200).json(newBook)
     } catch (error) {
-        console.log(err)
+        // console.log(err)
         response.status(404).json(err)
     }
 })
@@ -46,7 +46,8 @@ app.post("/books", async(request, response) => {
 // CRUD: UPDATE
 
 app.put('/books/:id', async  (request, response) => {
-    console.log(request.params.id);
+    // console.log(request.params.id);
+    console.log("put")
     try {
         await Book.findByIdAndUpdate(request.params.id, request.body);
         response.status(204).send()
@@ -66,10 +67,10 @@ app.put('/books/:id', async  (request, response) => {
 
 
 app.delete('/books/:id' , async (request, response) => {
-    console.log(request)
+    console.log("delete")
     try {
         const id = request.params.id;
-        console.log(id)
+        // console.log(id)
         const deletedBook = await Book.findByIdAndDelete(id)
         response.status(200).json(deletedBook)
     } catch (err) {

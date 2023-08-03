@@ -16,15 +16,18 @@ const handleChange = (event) => {
   const submit = event => {
     event.preventDefault()
     onSubmitFunc(formData)
+    console.log("form submit")
   }
 
-  <div>
-  <form onSubmit={submit}>
-    <input placeholder='book name' onChange={handleChange} name='name' value={formData.name}></input>
-    <input placeholder='description' onChange={handleChange} name='descrption' value={formData.description}></input>
-    <input placeholder='status' onChange={handleChange} name='status' value={formData.status}></input >
-    <button type='submit'>{book ? 'Update' : 'Add Book'}</button>
-  </form>
-</div>
+  return (
+    <div>
+    <form onSubmit={submit}>
+      <input placeholder='book name' onChange={handleChange} name='name' value={formData.name}></input>
+      <input placeholder='description' onChange={handleChange} name='description' value={formData.description}></input>
+      <input placeholder='status' onChange={handleChange} name='status' value={formData.status}></input >
+      <button type='submit'>{book ? 'Update' : 'Add Book'}</button>
+    </form>
+  </div>
+)
 
 }
