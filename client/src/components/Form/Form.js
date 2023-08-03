@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import Book from '../../../../server/models/books'
 
-export default function Form({onSubmitFunc, movie}) {
-  const [formData, setFormData] = useState(movie ?? {
+
+export default function Form({onSubmitFunc, book}) {
+  const [formData, setFormData] = useState(book ?? {
     name: '',
     description: '',
     status: ''

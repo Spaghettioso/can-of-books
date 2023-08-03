@@ -1,5 +1,7 @@
 import React, {useEffect,useState} from 'react'
 import axios from 'axios'
+import BookCard from './BookCard/BookCard'
+import Form from './Form/Form'
 
 
 export default function Main() {
@@ -33,7 +35,7 @@ export default function Main() {
   //UPDATE
 
   const handleUpdateBook = async (book) => {
-    await axios.put(`https://localhost:8090/books/${book_id}`, book)
+    await axios.put(`https://localhost:8090/books/${book._id}`, book)
     getBooks();
   } 
 
