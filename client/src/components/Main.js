@@ -29,6 +29,7 @@ export default function Main() {
 
   const handleDelete = async (id) => {
     const res = await axios.delete(`https://localhost:8090/books/${id}`)
+    console.log(res)
     getBooks()
   }
 
